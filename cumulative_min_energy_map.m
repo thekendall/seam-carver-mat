@@ -8,7 +8,6 @@ function cumulativeEnergyMap = cumulative_min_energy_map(energyImg,seamDirection
 if strcmp(seamDirection,'VERTICAL')
     cumulativeEnergyMap = energyImg;
     for i = 2:size(cumulativeEnergyMap,1)
-        display(i)
         prev_row = cat(2, cat(2,[nan],cumulativeEnergyMap(i-1,:)),[nan]);
         shift_left = circshift(prev_row, 1);
         shift_right = circshift(prev_row, -1);
